@@ -1,43 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:ramirez1289/pagina_uno.dart';
+import 'package:ramirez1289/pagina_aboutdialog.dart';
+import 'package:ramirez1289/pagina_card.dart';
+import 'package:ramirez1289/pagina_image_filtered.dart';
+import 'package:ramirez1289/pagina_listview.dart';
+import 'package:ramirez1289/pagina_radial_n_sweep_gradient.dart';
+import 'package:ramirez1289/pagina_richtext.dart';
+import 'package:ramirez1289/pagina_silverappbar.dart';
+import 'package:ramirez1289/pagina_fade_transition.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiRutasApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiRutasApp extends StatelessWidget {
+  const MiRutasApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Entre Paginas Routes',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const PantallaUno(),
+        '/pantalla2': (context) => MyListView(),
+        '/pantalla3': (context) => const MySliverAppBar(),
+        '/pantalla4': (context) => const MyRichText(),
+        '/pantalla5': (context) => const MyCard(),
+        '/pantalla6': (context) => const MyRadialNSeepGradient(),
+        '/pantalla7': (context) => const MyAboutDialog(),
+        '/pantalla8': (context) => const MyImageFiltered(),
+        '/pantalla9': (context) => const MyFadeTransition(),
+      },
     );
   }
 }
